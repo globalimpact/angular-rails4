@@ -6,8 +6,7 @@ gem 'rails', '4.0.0'
 # Use Postgresql as the database for Active Record
 gem 'pg'
 
-# Angular-Rails
-gem 'angularjs-rails'
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
