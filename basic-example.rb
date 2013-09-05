@@ -17,7 +17,7 @@ class ExampleTest < Test::Unit::TestCase
 
     def test_sauce
         @driver.navigate.to "http://angrails.herokuapp.com/"
-        assert @driver.title.include?("AngularRails4")
+        assert @driver.title.include?("AngularRails1234")
     end
 
     def teardown
