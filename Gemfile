@@ -6,7 +6,11 @@ gem 'rails', '4.0.0'
 # Use Postgresql as the database for Active Record
 gem 'pg'
 
+# Heroku Factor
 gem 'rails_12factor'
+
+# selenium driver for saucelabs
+gem 'selenium-webdriver'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
