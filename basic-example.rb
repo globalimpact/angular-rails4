@@ -40,7 +40,7 @@ class ExampleTestIE < Test::Unit::TestCase
 
     def test_sauce
         @driver.navigate.to "http://qa-angrails.herokuapp.com/"
-        assert @driver.title.include?("AngularRails4")
+        assert @driver.title.equals?("AngularRailsbreak")
     end
 
     def teardown
