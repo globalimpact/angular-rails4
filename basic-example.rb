@@ -28,7 +28,7 @@ end
 class ExampleTestIE < Test::Unit::TestCase
     def setup
         caps = Selenium::WebDriver::Remote::Capabilities.ie
-        caps.version = "9"
+        caps.version = "8"
         caps.platform = :XP
         caps[:name] = "IE Testing Selenium 2 with Ruby on Sauce"
 
