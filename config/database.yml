@@ -18,12 +18,3 @@ test:
     username: dan.smith
     password: Rethink4498
     host: localhost
-
-production:
-    adapter: postgresql
-    encoding: utf8
-    database: angular_rails4_production
-    pool: 5
-    username: dan.smith
-    password: Rethink4498
-    host: localhost
