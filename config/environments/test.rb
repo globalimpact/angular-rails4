@@ -34,6 +34,4 @@ AngularRails4::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
   
-  SAUCE_USERNAME=dsmithco_github
-  SAUCE_ACCESS_KEY=197fbca4-bf44-46dc-b2e4-8185ed8259d5
 end
