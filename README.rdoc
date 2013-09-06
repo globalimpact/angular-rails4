@@ -1,6 +1,6 @@
 == README
 
-
+<img src="https://www.codeship.io/projects/e8bf3890-ee53-0130-957a-52ea4b2c7608/status">
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
