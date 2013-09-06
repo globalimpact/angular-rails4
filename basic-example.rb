@@ -16,8 +16,8 @@ class ExampleTest < Test::Unit::TestCase
     end
 
     def test_sauce
-        @driver.navigate.to "http://angrails.herokuapp.com/"
-        assert @driver.title.include?("AngularRails1234")
+        @driver.navigate.to "http://qa-angrails.herokuapp.com/"
+        assert @driver.title.include?("AngularRailsbreak")
     end
 
     def teardown
@@ -39,8 +39,8 @@ class ExampleTestIE < Test::Unit::TestCase
     end
 
     def test_sauce
-        @driver.navigate.to "http://angrails.herokuapp.com/"
-        assert @driver.title.include?("AngularRails4")
+        @driver.navigate.to "http://qa-angrails.herokuapp.com/"
+        assert @driver.title.equals?("AngularRailsbreak")
     end
 
     def teardown

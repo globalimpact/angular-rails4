@@ -1,25 +1,28 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div data-alert class="alert-box alert radius">
+      <!-- Your content goes here -->
+       <h5><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h5>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+                  </ul>
+      <a href="#" class="close">&times;</a>
+    </div> 
+  <% end %>
+
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
+    <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', :class=> "button round" %>
   </div>
 <% end %>
