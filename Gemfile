@@ -30,7 +30,8 @@ gem 'jquery-rails'
 gem 'compass-rails' # you need this or you get an err
 
 gem 'zurb-foundation'
-gem 'ember-rails', git: 'git://github.com/emberjs/ember-rails.git'
+
+gem 'batman-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

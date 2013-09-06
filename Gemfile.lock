@@ -1,16 +1,3 @@
-GIT
-  remote: git://github.com/emberjs/ember-rails.git
-  revision: ee6cf728728f4a0ca66852a250dbd50043b0338d
-  specs:
-    ember-rails (0.13.0)
-      active_model_serializers
-      barber (>= 0.4.1)
-      ember-data-source
-      ember-source
-      execjs (>= 1.2)
-      handlebars-source
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -23,8 +10,6 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_model_serializers (0.8.1)
-      activemodel (>= 3.0)
     activemodel (4.0.0)
       activesupport (= 4.0.0)
       builder (~> 3.1.0)
@@ -42,10 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.13)
-    barber (0.4.2)
-      ember-source
-      execjs
-      handlebars-source
+    batman-rails (0.15.4)
+      railties (>= 3.2)
     builder (3.1.4)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
@@ -63,15 +46,10 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-    ember-data-source (0.14)
-      ember-source
-    ember-source (1.0.0)
-      handlebars-source (= 1.0.12)
     erubis (2.7.0)
     execjs (2.0.1)
     ffi (1.9.0)
     fssm (0.2.10)
-    handlebars-source (1.0.12)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.1)
@@ -157,9 +135,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  batman-rails
   coffee-rails (~> 4.0.0)
   compass-rails
-  ember-rails!
   jbuilder (~> 1.2)
   jquery-rails
   pg
