@@ -1,6 +1,6 @@
 <h1>Listing posts</h1>
 
-<table style="width:100%;">
+<table style="width:100%;border-radius:4px;">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,8 +14,8 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %>
-       <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', post, :class=>"button tiny secondary round" %>
+       <%= link_to 'Edit', edit_post_path(post), :class=>"button secondary tiny round" %> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"button tiny round secondary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path, :class=> "button radius success" %>
+<%= link_to 'New Post', new_post_path, :class=> "button round success" %>

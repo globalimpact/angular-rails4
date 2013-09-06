@@ -12,3 +12,7 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+input, textarea {
+	border-radius: 4px;
+}
