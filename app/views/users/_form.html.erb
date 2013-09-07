@@ -1,0 +1,60 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row ">
+	<div class="large-12 columns">
+		
+		<div class="row collapse">
+    		<div class="small-2 columns">
+				<span class="prefix dark radius"><%= f.label :email %></span>
+			</div>
+	  		<div class="small-10 columns">
+    			<%= f.email_field :email %>
+			</div>
+		</div>
+		
+		 <!-- role checkboxes go here -->
+		<% if can? :assign_roles, @user %>
+		
+		<div class="row collapse">
+    		<div class="small-2 columns">
+				<span class="prefix dark radius"><%= f.label :role %></span>
+			</div>
+	  		<div class="small-10 columns">
+    			<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+			</div>
+		</div>
+		<% end %>
+
+		 
+
+<!--  <div class="field">
+    <%= f.label :password, "Password" %>
+    <div class="controls">
+      <%= f.password_field :password %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>-->
+
+</div>
+</div>
+
+  <div class="actions">
+    <%= f.submit 'Update User', :class => 'button radius medium success right'  %>
+  </div>
+<% end %>

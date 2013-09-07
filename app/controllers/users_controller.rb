@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   
   def index
       @users = User.all
-      authorize! :manage, @user 
   end
 
   def show
@@ -48,7 +47,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.destroy
       redirect_to users_path, :flash => { :success => 'User was successfully deleted.' }
-      authorize! :manage, @user
       
     end
   end
