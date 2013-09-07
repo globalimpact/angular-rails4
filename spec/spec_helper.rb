@@ -47,8 +47,12 @@ RSpec.configure do |config|
   end
   config.before(:each) do
     DatabaseCleaner.start
+    $disable_authentication = true
+
   end
   config.after(:each) do
     DatabaseCleaner.clean
+    $disable_authentication = false
   end
+
 end

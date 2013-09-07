@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:create]
+  before_filter :authenticate_user!, :except => [:create] unless Rails.env.test?
+
+
+private
+
+  def authenticate_user!
+    super unless $disable_authentication
+  end
+
+public
 
   def create
     # Create the user from params

@@ -3,8 +3,8 @@
 <table style="width:100%;">
   <thead>
     <tr>
+      <th>Name</th>
       <th>Email</th>
-      <th>Role</th>
       <th>Last Signed In</th>
       <th>Actions</th>
     </tr>
@@ -12,6 +12,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.name %></td>
         <td><%= link_to user.email, user %></td>
         <td><%= user.last_sign_in_at %></td>
         <td>
