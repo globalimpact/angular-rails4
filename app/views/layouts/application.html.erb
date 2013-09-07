@@ -46,11 +46,21 @@
           <a href="/posts">Posts</a>
         </li>
         <li class="divider"></li>
-        <li><a href="/posts/new">New Post</a></li>
-        <li class="divider"></li>
+
+        <% if user_signed_in? %>
+          <li><a href="/posts/new">New Post</a></li>
+          <li class="divider"></li>
+        <% end %>
+        
+        <% if user_signed_in? %>
         <li>
-          <a href="#" style="background-color:#3399cd" >Login</a>
+          <a href="/users/sign_out" style="background-color:#3399cd" >Logout</a>
         </li>
+        <% else %>
+          <li>
+          <a href="/users/sign_in" style="background-color:#3399cd" >Login</a>
+        </li>
+        <% end %>
       </ul>
     </section>
   </nav>

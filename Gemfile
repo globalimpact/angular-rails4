@@ -27,7 +27,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'compass-rails' # you need this or you get an err
+gem "compass-rails", "~> 2.0.alpha.0" # you need this or you get an err
 
 gem 'zurb-foundation'
 
@@ -38,6 +38,26 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem "figaro"
+
+group :development do
+	gem "rspec-rails"
+	gem "factory_girl_rails"
+end
+
+group :test do
+	gem "rspec-rails"
+    gem "factory_girl_rails"
+
+	gem "email_spec"
+	gem "cucumber-rails", :require => false
+	gem "database_cleaner"
+	gem "capybara"
+end
+
+gem "devise"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
