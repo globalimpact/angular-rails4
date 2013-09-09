@@ -1,4 +1,4 @@
-<%= link_to 'New User', new_user_path, :class => "button success radius right" %>
+<%= link_to 'New User', new_user_path, :class => "button success round right" %>
 <h1>Users</h1>
 <table style="width:100%;">
   <thead>
@@ -16,8 +16,8 @@
         <td><%= link_to user.email, user %></td>
         <td><%= user.last_sign_in_at %></td>
         <td>
-          <%= link_to 'Edit', edit_user_path(user), :class => "button small radius success" %>
-          <%= link_to 'Delete', user_path(user), :method => 'delete', :confirm => "Delete this item (" + user.email + ")?", :class => "button small radius alert" %>
+          <%= link_to 'Edit', edit_user_path(user), :class => "button small round secondary" %>
+          <%= link_to 'Delete', user_path(user), :method => 'delete', :confirm => "Delete this item (" + user.email + ")?", :class => "button small round secondary" %>
         </td>
       </tr>
     <% end %>

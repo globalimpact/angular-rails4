@@ -1,3 +1,5 @@
-<h1>Edit User | <%= @user.email%></h1>
+<h1>Edit User <i><%= @user.name%></i></h1>
 
 <%= render 'form' %>
+    <%= link_to 'All Users', users_path, :class=> "button round small secondary" %> 
+    <%= link_to 'Delete User', user_path(@user), :method => 'delete', :confirm => 'Are you sure?', :class=> "button round small secondary" %>

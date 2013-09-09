@@ -54,8 +54,9 @@
         
         <% if user_signed_in? %>
         <li>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :style=>"background-color:#3399cd" %>
         </li>
+
         <% else %>
           <li>
           <a href="/users/sign_in" style="background-color:#3399cd" >Login</a>
@@ -64,8 +65,17 @@
       </ul>
     </section>
   </nav>
- 
-
+  <% if user_signed_in? %>
+    <div class="text-right" style="margin:-10px 20px 10px">          
+      <a href="#" data-dropdown="user" class="button secondary dropdown round small inline" ><%= current_user.name %></a>
+      <ul id="user" class="f-dropdown" data-dropdown-content class="text-left">
+      <li class="text-center"> <%= link_to "User Profile", current_user %></li>  
+      <li class="text-center"><%= link_to "Edit Account", edit_user_registration_path %> </li> 
+      </ul>
+      <%= link_to "Edit account", edit_user_registration_path %>
+    </div>
+  <% end %>
+      <%= link_to "Edit account", edit_user_registration_path %>
 
   <div class="row">
     <div class="large-12 columns">
@@ -75,7 +85,8 @@
    	 <%= yield %>
     </div>
   </div>
-  </footer>
+
+
 
     
   </body>

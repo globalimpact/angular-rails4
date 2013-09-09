@@ -8,6 +8,7 @@ private
     super unless $disable_authentication
   end
 
+
 public
 
   def create
@@ -33,19 +34,18 @@ public
 
   def new
     @user = User.new
-    
   end
 
   def edit
-    @user = User.find(params[:id])
-    
+    @user = User.find(params[:id]) 
+    session[:return_to] = request.referer
   end
 
 
   def update
       @user = User.find(params[:id])
-      if @user.update_attributes(params[:user])
-        redirect_to action: "index", :flash => { :success => 'User was successfully updated.' }
+      if @user.update_attributes(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+        redirect_to @user, :notice => "User was successfully updated."
       else
         render :action => 'edit'
       end
@@ -55,7 +55,7 @@ public
   def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to users_path, :flash => { :success => 'User was successfully deleted.' }
+      redirect_to users_path, :notice => 'User was successfully deleted.'
       
     end
   end

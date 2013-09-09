@@ -122,12 +122,10 @@ When /^I sign in with a wrong password$/ do
 end
 
 When /^I edit my account details$/ do
-  pending # express the regexp above with the code you wish you had
-
-#  click_link "Edit account"
-#  fill_in "user_name", :with => "newname"
-#  fill_in "user_current_password", :with => @visitor[:password]
-#  click_button "Update"
+  click_link "Edit account"
+  fill_in "name", :with => "newname"
+  fill_in "user_current_password", :with => @visitor[:password]
+  click_button "Update"
 end
 
 When /^I look at the list of users$/ do
