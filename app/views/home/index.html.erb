@@ -1,3 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Posts</h1>
+<div ng-controller="PostsCtrl">
+  <div id="post-list-container">
+      <div ng-repeat="post in posts">
+        <h3>{{post.title}}</h3>
+        <p> <i>{{post.created_at | date:fullDate}}</i></p>
+        <p>{{post.body}}</p>
+      </div>
+  </div>
+</div>
 

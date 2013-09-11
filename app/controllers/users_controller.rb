@@ -1,22 +1,13 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:create] unless Rails.env.test?
 
-
-private
-
-  def authenticate_user!
-    super unless $disable_authentication
-  end
-
-
-public
-
   def create
     # Create the user from params
-    @user = User.new(params[:user])
+    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+
     if @user.save
       # Deliver the signup_email
-      UserMailer.signup_email(@user).deliver
+      # UserMailer.signup_email(@user).deliver
       redirect_to(@user, :notice => "User created")
     else
       render :action => "new"
@@ -58,4 +49,13 @@ public
       redirect_to users_path, :notice => 'User was successfully deleted.'
       
     end
+
+private
+
+  def authenticate_user!
+    super unless $disable_authentication
+  end
+
+
+
   end

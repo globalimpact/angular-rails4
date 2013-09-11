@@ -6,9 +6,16 @@ devise_for :users do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
     resources :users
+
     resources :posts
 
+  scope :api do
+    get "/posts(.:format)" => "posts#apiindex"
+    get "/posts/:id(.:format)" => "posts#apishow"
 
+    get "/users(.:format)" => "users#apiindex"
+    get "/users/:id(.:format)" => "users#apishow"
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
