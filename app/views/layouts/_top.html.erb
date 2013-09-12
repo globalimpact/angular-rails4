@@ -1,0 +1,48 @@
+<!-- Navigation -->
+
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="/">
+            Dan's Play App
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>
+        <li class="h">
+          <a href="/posts">Posts</a>
+        </li>
+        <li class="divider"></li>
+
+        <% if user_signed_in? %>
+
+          <li><a href="/users">Users</a></li>
+          <li class="divider"></li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :style=>"background-color:#3399cd" %>
+        </li>
+
+        <% else %>
+          <li>
+          <a href="/users/sign_in" style="background-color:#3399cd" >Login</a>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+  <% if user_signed_in? %>
+    <div class="text-right" style="margin:-10px 20px 10px">          
+      <a href="#" data-dropdown="user" class="button secondary dropdown round small inline" ><%= current_user.name %></a>
+      <ul id="user" class="f-dropdown" data-dropdown-content class="text-left">
+      <li class="text-center"> <%= link_to "User Profile", edit_user_registration_path %></li> 
+      </ul>
+    </div>
+  <% end %>

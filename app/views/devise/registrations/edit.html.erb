@@ -12,13 +12,13 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+  <div><%= f.label :password, "New Password <i>(leave blank if you don't want to change it)</i>".html_safe %> 
   <%= f.password_field :password, :autocomplete => "on" %></div>
 
   <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+  <div><%= f.label :current_password, "Password Confirmation <i>(we need your current password to confirm your changes)</i>".html_safe %> 
   <%= f.password_field :current_password %></div>
 
   <div><%= f.submit "Update", :class => "button round" %></div>
