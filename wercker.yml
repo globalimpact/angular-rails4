@@ -28,12 +28,12 @@ build:
         #        code: bundle exec rspec
 	- script:
 		name: install database
-		code: echo "installing: $(rake db:install)"
+		code: "rake db:install"
 
 	- script:
 		name: load migrations
-		code: "loading migrations: $(rake db:load)"
+		code: "rake db:load"
 
 	- script:
 		name: seed database
-		code: "seeding database: $(rake db:seed)"
+		code: "rake db:seed"
