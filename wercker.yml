@@ -31,7 +31,7 @@ build:
                 code: "bundle exec rake db:create"
         - script:
                 name: load migrations
-                code: "bundle exec rake db:load"
+                code: "bundle exec rake db:schema:load"
         - script:
                 name: seed database
                 code: "bundle exec rake db:seed"
