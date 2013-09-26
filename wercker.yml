@@ -32,4 +32,8 @@ build:
                 code: "bundle exec rake db:schema:load RAILS_ENV=test"
         - script:
                 name: seed database
-                code: "bundle exec rake db:seed"
+                code: |-
+                  export ADMIN_NAME=`test`
+                  export ADMIN_EMAIL=`test@test.com`
+                  export ADMIN_PASSWORD=`test`
+                  bundle exec rake db:seed
