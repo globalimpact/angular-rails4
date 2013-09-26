@@ -15,6 +15,7 @@ build:
 
         # A step that prepares the database.yml using the database in services
         - rails-database-yml
+            step: wercker/rails-database-yml@0.9.2
             service: postgresql
 
         # A custom script step, name value is used in the UI
