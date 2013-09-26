@@ -35,6 +35,9 @@ build:
                   export ADMIN_PASSWORD=`test`
                   bundle exec rake db:seed
         - script:
+            name: cucumber
+            code: bundle exec rake cucumber
+        - script:
             name: rspec
             code: bundle exec rspec
 
