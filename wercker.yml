@@ -28,7 +28,7 @@ build:
         #        code: bundle exec rspec
         - script:
                 name: install database
-                code: "bundle exec rake db:install"
+                code: "bundle exec rake db:create"
         - script:
                 name: load migrations
                 code: "bundle exec rake db:load"
