@@ -27,14 +27,11 @@ build:
         #        name: rspec
         #        code: bundle exec rspec
         - script:
-                name: bundle rake
-                code: "bundle exec"
-        - script:
                 name: install database
-                code: "rake db:install"
+                code: "bundle exec rake db:install"
         - script:
                 name: load migrations
-                code: "rake db:load"
+                code: "bundle exec rake db:load"
         - script:
                 name: seed database
-                code: "rake db:seed"
+                code: "bundle exec rake db:seed"
