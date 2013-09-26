@@ -26,10 +26,7 @@ build:
                 echo -p "gem list: $(gem list)"
         - script:
                 name: install database
-                code: "bundle exec rake db:create RAILS_ENV=test"
-        - script:
-                name: load migrations
-                code: "bundle exec rake db:migrate RAILS_ENV=test"
+                code: "bundle exec rake db:schema:load RAILS_ENV=test"
         - script:
                 name: seed database
                 code: |-
@@ -37,3 +34,10 @@ build:
                   export ADMIN_EMAIL=`test@test.com`
                   export ADMIN_PASSWORD=`test`
                   bundle exec rake db:seed
+
+deploy:
+    steps:
+        - heroku-deploy
+        - script:
+            name: Update database
+            code: heroku run rake db:migrate --app $TARGET_NAME
