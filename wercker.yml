@@ -34,10 +34,13 @@ build:
                   export ADMIN_EMAIL=`test@test.com`
                   export ADMIN_PASSWORD=`test`
                   bundle exec rake db:seed
+        - script:
+            name: rspec
+            code: bundle exec rspec
 
 deploy:
     steps:
         - heroku-deploy
         - script:
             name: Update database
-            code: heroku run rake db:migrate --app $TARGET_NAME
+            code: heroku run rake db:migrate --app derp
