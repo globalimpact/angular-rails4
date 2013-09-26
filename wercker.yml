@@ -12,8 +12,11 @@ build:
     steps:
         # A step that executes `bundle install` command
         - bundle-install
+
         # A step that prepares the database.yml using the database in services
-        #- rails-database-yml
+        - rails-database-yml
+            service: postgresql
+
         # A custom script step, name value is used in the UI
         # and the code value contains the command that get executed
         - script:
@@ -22,16 +25,14 @@ build:
                 echo "ruby version $(ruby --version) running"
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
-        # Add more steps here:
-        # - script:
-        #        name: rspec
-        #        code: bundle exec rspec
-        - script:
-                name: install database
-                code: "bundle exec rake db:create"
+
+        #- script:
+        #        name: install database
+        #        code: "bundle exec rake db:create"
+
         - script:
                 name: load migrations
-                code: "bundle exec rake db:schema:load"
+                code: "bundle exec rake db:schema:load RAILS_ENV=test"
         - script:
                 name: seed database
                 code: "bundle exec rake db:seed"

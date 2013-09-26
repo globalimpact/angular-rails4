@@ -15,8 +15,8 @@ test: &test
     encoding: utf8
     database: angular_rails4_test
     pool: 5
-    username: dan.smith
-    password: Rethink4498
+    #username: dan.smith
+    #password: Rethink4498
     host: localhost
 
 cucumber:
