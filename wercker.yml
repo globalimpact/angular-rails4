@@ -30,9 +30,6 @@ build:
         - script:
                 name: seed database
                 code: |-
-                  export ADMIN_NAME=`test`
-                  export ADMIN_EMAIL=`test@test.com`
-                  export ADMIN_PASSWORD=`test`
                   bundle exec rake db:seed
         - script:
             name: cucumber
